@@ -1,0 +1,8 @@
+int func()
+{
+	int a=1;
+	int b=a+2;
+	double b=3.4, c=1e-5;
+	string _s="abc";
+	return 0;
+}

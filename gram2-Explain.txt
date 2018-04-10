@@ -1,0 +1,44 @@
+<S> -> <FUNC>
+
+<FUNC> -> <type><FUNCSIG><COMSENTEN>
+
+<FUNCSIG> -> <identifier>()
+<FUNCSIG> -> <identifier>(<PARAMETER>)
+
+<PARAMETER> -> <type><identifier>
+<PARAMETER> -> <type><identifier>,<PARAMETER>
+
+<COMSENTEN> -> <EXP>;
+<COMSENTEN> -> {}
+<COMSENTEN> -> {<SENTENLIST>}
+
+<SENTENLIST> -> <STATELIST>
+<SENTENLIST> -> <SENTENCE>
+<SENTENLIST> -> <STATELIST><SENTENLIST>
+<SENTENLIST> -> <SENTENCE><SENTENLIST>
+
+<STATELIST> -> <type><VARLIST>
+
+<VARLIST> -> <VARIABLE>;
+
+<VARIABLE> -> <identifier>
+<VARIABLE> -> <ASSIGN>
+<VARIABLE> -> <identifier>,<VARIABLE>
+<VARIABLE> -> <ASSIGN>,<VARIABLE>
+
+<SENTENCE> -> <EXP>
+<SENTENCE> -> <JUMP>
+<SENTENCE> -> <ASSIGN>
+
+<OPERNUM> -> <const>
+<OPERNUM> -> <stringconst>
+<OPERNUM> -> <numberconst>
+<OPERNUM> -> <identifier>
+
+<EXP> -> <OPERNUM>
+<EXP> -> <OPERNUM><operator><EXP>
+
+<JUMP> -> return;
+<JUMP> -> return<EXP>;
+
+<ASSIGN> -> <identifier>=<EXP>
